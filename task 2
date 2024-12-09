@@ -1,0 +1,361 @@
+TASK 2
+ Email Template
+ 
+ An email template is a pre-designed email that can be used to send out
+ marketing or promotional emails. The goal of a good email template is to make it
+ easy and quick for businesses to send out emails that look professional and
+ engaging.
+ A good email template should be:
+ Visually appealing: The email template should be visually appealing and easy to read. The
+ use of colors, fonts, and images should be carefully considered to create a visually
+ appealing email.
+ Easy to use: The email template should be easy to use and navigate. The user should be able
+ to easily find the necessary information and make changes to the template.
+ Responsive: The email template should be responsive, so that it looks good on all devices,
+ including desktop computers, laptops, tablets, and smartphones
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Weekly Update</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+      <      background-color: #f1f1f1;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+        }
+        .header h1 {
+            color: white;
+            font-size: 28px;
+            margin: 10px 0;
+        }
+        .header p {
+            color: white;
+            font-size: 16px;
+        }
+        .cta-button {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .new-releases {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .new-releases h2 {
+            font-size: 22px;
+            color: #333;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .feature-card i {
+            font-size: 40px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #777;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .social-icons i {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #777;
+        }
+        /* Login form style */
+        .login-form-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .login-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .login-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .login-message {
+            color: red;
+            display: none;
+        }
+        .login-success {
+            color: green;
+            display: none;
+        }
+        .login-link {
+            color: #4CAF50;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .sign-up-form-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .sign-up-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        .sign-up-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .sign-up-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* Content page styles */
+        .content-page {
+            display: none;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://via.placeholder.com/50" alt="Logo">
+            <h1>Your Weekly Update!</h1>
+            <p>Get the latest news, releases, and exciting features from us!</p>
+            <a href="javascript:void(0)" class="cta-button" onclick="showLoginForm()">Go to your account!</a>
+        </div>
+
+        <div class="new-releases">
+            <h2>What's New This Week?</h2>
+            <p>We've added amazing new features to make your experience even better!</p>
+
+            <div class="feature-list">
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notifications</h3>
+                    <p>Stay updated with instant notifications for your account activities.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Advanced Settings</h3>
+                    <p>Take control with more customizable settings for your account.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Integration</h3>
+                    <p>Join the community and connect with like-minded people.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Cloud Sync</h3>
+                    <p>Access your data from any device with seamless cloud synchronization.</p>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="cta-button" onclick="showLoginForm()">Go to your account!</a>
+        </div>
+
+        <div class="footer">
+            <p>You received this email because you signed up or are a customer of our service.</p>
+            <p><a href="#">Unsubscribe</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form Modal -->
+    <div class="login-form-container" id="loginFormContainer">
+        <div class="login-form">
+            <h3>Login to Your Account</h3>
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button onclick="login()">Login</button>
+            <p id="loginMessage" class="login-message">Invalid credentials. Please try again.</p>
+            <p id="loginSuccess" class="login-success">Logged in successfully!</p>
+            <p id="signUpMessage" class="login-message">Account not found. <span class="login-link" onclick="showSignUpForm()">Sign up here</span>.</p>
+        </div>
+    </div>
+
+    <!-- Sign Up Form Modal -->
+    <div class="sign-up-form-container" id="signUpFormContainer">
+        <div class="sign-up-form">
+            <h3>Create a New Account</h3>
+            <input type="text" placeholder="Username" id="newUsername" required>
+            <input type="password" placeholder="Password" id="newPassword" required>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+            <button onclick="signUp()">Sign Up</button>
+            <p id="signUpMessage" class="login-message">Error signing up. Please check your details.</p>
+        </div>
+    </div>
+
+    <!-- Content Page after login -->
+    <div class="content-page" id="contentPage">
+        <h2>Welcome to Your Dashboard!</h2>
+        <p>Here is some exclusive content for you after logging in!</p>
+        <p>Enjoy your time on the platform and explore all the great features we have for you!</p>
+    </div>
+
+    <script>
+        // Dummy data to simulate account existence
+        const accounts = [
+            { username: 'user1', password: 'password1' },
+            { username: 'user2', password: 'password2' }
+        ];
+
+        // Show login form
+        function showLoginForm() {
+            document.getElementById('loginFormContainer').style.display = 'flex';
+            document.getElementById('signUpFormContainer').style.display = 'none'; // Hide sign-up form
+        }
+
+        // Show sign-up form
+        function showSignUpForm() {
+            document.getElementById('signUpFormContainer').style.display = 'flex';
+            document.getElementById('loginFormContainer').style.display = 'none'; // Hide login form
+        }
+
+        // Login process
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const account = accounts.find(acc => acc.username === username);
+
+            // Account exists
+            if (account && account.password === password) {
+                document.getElementById('loginSuccess').style.display = 'block';
+                document.getElementById('loginMessage').style.display = 'none';
+                document.getElementById('signUpMessage').style.display = 'none';
+
+                // Redirect to content page after 2 seconds
+                setTimeout(() => {
+                    document.getElementById('loginFormContainer').style.display = 'none';
+                    document.getElementById('contentPage').style.display = 'block';
+                }, 2000); // Wait for 2 seconds before redirecting
+            } 
+            // Account does not exist
+            else if (account && account.password !== password) {
+                document.getElementById('loginMessage').style.display = 'block';
+                document.getElementById('loginSuccess').style.display = 'none';
+                document.getElementById('signUpMessage').style.display = 'none';
+            }
+            // Account doesn't exist at all
+            else {
+                document.getElementById('signUpMessage').style.display = 'block';
+                document.getElementById('loginMessage').style.display = 'none';
+                document.getElementById('loginSuccess').style.display = 'none';
+            }
+        }
+
+        // Sign up process
+        function signUp() {
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword === confirmPassword) {
+                // Add new account to the list (in a real-world scenario, this would involve backend logic)
+                accounts.push({ username: newUsername, password: newPassword });
+                alert("Account created successfully!");
+                showLoginForm(); // After sign-up, show login form again
+            } else {
+                document.getElementById('signUpMessage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
