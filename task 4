@@ -1,0 +1,330 @@
+ E-commerce website
+
+ An e-commerce website UI/UX project is the process of designing an online
+ store that is both visually appealing and easy to use. The goal of a good e
+commerce website is to make it easy for customers to find the products
+ they want, and to encourage them to buy them.
+ A good e-commerce website should be:
+ Visually appealing: The website should be visually appealing and easy to read. The use of colors,
+ fonts, and images should be carefully considered to create a visually appealing website.
+ Easy to use: The website should be easy to use and navigate. The customer should be able to easily
+ find the necessary information and make their purchases.
+ Categorized; The products on the website should be categorized, so that customers can easily find
+ the products they are looking for. The categories should be clear and concise, and they should be
+ consistent throughout the website.
+ Searchable: The website should be searchable so that customers can easily find the products they
+ are looking for. The search function should be easy to use and should return relevant results
+
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">B-Shop</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <input type="text" id="search-bar" placeholder="Search for products...">
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Admire Stylish Dresses & Looks</h1>
+      <button>Shop Now</button>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <h2>Shop by Category</h2>
+      <div class="category-list">
+        <div class="category" data-category="dresses">Dresses</div>
+        <div class="category" data-category="jackets">Jackets</div>
+        <div class="category" data-category="shoes">Shoes</div>
+        <div class="category" data-category="accessories">Accessories</div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+      <h2>Products</h2>
+      <div class="product-list" id="product-list">
+        <div class="product" data-category="dresses">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.qOmsbrURyVHprKSs-pdKGQHaLH&pid=Api&P=0&h=180" alt="Dress 1">
+          <h3>Stylish Red Dress</h3>
+          <p>$120</p>
+        </div>
+        <div class="product" data-category="jackets">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.f4tiMLbyTdCoyMr2uR-ZwgHaKq&pid=Api&P=0&h=180" alt="Jacket 1">
+          <h3>Leather Jacket</h3>
+          <p>$250</p>
+        </div>
+        <div class="product" data-category="shoes">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.cCxWCa_-G9zVbUaNAiU0GgHaEj&pid=Api&P=0&h=180" alt="Shoes 1">
+          <h3>Classic Sneakers</h3>
+          <p>$75</p>
+        </div>
+        <div class="product" data-category="accessories">
+          <img src="https://tse4.mm.bing.net/th?id=OIP.QHNGmzqB38cyXdVLTFFjhgHaE7&pid=Api&P=0&h=180" alt="Accessory 1">
+          <h3>Elegant Watch</h3>
+          <p>$300</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 B-Shop. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+style.css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background color */
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e; /* Dark header */
+    color: #fff;
+  }
+  
+  header .logo {
+    font-size: 1.8rem;
+    color: #ff4081; /* Logo color */
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header input {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  header input:focus {
+    border: 2px solid #ff4081; /* Focused search bar color */
+  }
+  
+  .hero {
+    text-align: center;
+    background: url('https://tse1.mm.bing.net/th?id=OIP.HCKLr50nafiaajtSwkh6VAHaD4&pid=Api&P=0&h=180') no-repeat center center/cover;
+    color: #fff;
+    padding: 50px 20px;
+    position: relative;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero button:hover {
+    background-color: #f50057; /* Hover effect */
+  }
+  
+  .categories {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .categories h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .category-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  .category {
+    padding: 12px 25px;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .category:hover {
+    background-color: #ff4081;
+    color: #fff;
+  }
+  
+  .category-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    top: 60px;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .products {
+    padding: 20px;
+  }
+  
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .product {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .product h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    font-size: 1rem;
+    color: #ff4081; /* Product price color */
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+  }
+
+script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("search-bar");
+    const productList = document.getElementById("product-list");
+    const products = document.querySelectorAll(".product");
+    const categoryContainer = document.querySelector('.categories');
+    const categoryList = document.querySelector('.category-list');
+  
+    // Category dropdown functionality
+    const categoryDropdown = document.createElement('div');
+    categoryDropdown.classList.add('category-dropdown');
+    const selectCategory = document.createElement('select');
+    selectCategory.innerHTML = `
+      <option value="all">All Categories</option>
+      <option value="dresses">Dresses</option>
+      <option value="jackets">Jackets</option>
+      <option value="shoes">Shoes</option>
+      <option value="accessories">Accessories</option>
+    `;
+    categoryDropdown.appendChild(selectCategory);
+    categoryContainer.appendChild(categoryDropdown);
+  
+    // Show the dropdown on click
+    categoryList.addEventListener("click", () => {
+      categoryDropdown.style.display = categoryDropdown.style.display === "none" || !categoryDropdown.style.display ? "block" : "none";
+    });
+  
+    // Category filter functionality
+    selectCategory.addEventListener("change", (e) => {
+      const selectedCategory = e.target.value;
+      products.forEach((product) => {
+        const productCategory = product.dataset.category;
+        if (selectedCategory === "all" || productCategory === selectedCategory) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
+  
+    // Search functionality
+    searchBar.addEventListener("input", () => {
+      const searchKey = searchBar.value.toLowerCase().trim();
+      let found = false;
+  
+      // Search logic
+      products.forEach((product) => {
+        const productName = product.querySelector("h3").textContent.toLowerCase();
+        if (productName.includes(searchKey)) {
+          product.style.display = "block";
+          found = true;
+        } else {
+          product.style.display = "none";
+        }
+      });
+  
+      // Display "Item not found" message
+      if (!found && searchKey) {
+        productList.innerHTML = `<p style="text-align: center; color: red;">Item not found in the menu.</p>`;
+      } else if (!searchKey) {
+        productList.innerHTML = "";
+        products.forEach((product) => productList.appendChild(product));
+      }
+    });
+  });
+  
